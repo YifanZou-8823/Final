@@ -5,3 +5,7 @@
     "vite": "^7.2.6"
   }
 }
+
+"scripts": {
+    "start": "node main.js", // Adjust this according to your entry point
+}
