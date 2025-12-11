@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Fly to a location based on scroll position</title>
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+
+  <!-- Mapbox CSS -->
+  <link href="https://api.mapbox.com/mapbox-gl-js/v3.17.0-beta.1/mapbox-gl.css" rel="stylesheet">
+
+  <!-- Your custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<h1>Lowres Global CloudDrive</h1>
+
+<body>
+  <div id="map"></div>
+
+  <div id="features">
+    <section id="New-York-City" onclick="navigate(1)">
+      <h3>370 Jay Street.</h3>
+      <p>...</p>
+    </section>
+
+    <section id="Berlin" onclick="navigate(2)">
+      <h3>Schönhauser Allee 36</h3>
+      <p>...</p>
+    </section>
+
+    <section id="Shanghai" onclick="navigate(3)">
+      <h3>No. 567 West Yangsi West Road</h3>
+      <p>...</p>
+    </section>
+  </div>
+  <div></div>
+
+  <!-- Mapbox JS -->
+  <script src="https://api.mapbox.com/mapbox-gl-js/v3.17.0-beta.1/mapbox-gl.js"></script>
+
+  <!-- Your custom JS -->
+  <script>
+    function navigate(id) {
+      location.href = "/space.html?space=" + id;
+    }
+
+    // Mapbox code
+    mapboxgl.accessToken =
+      "pk.eyJ1IjoiamluZ3lpMTAxMyIsImEiOiJjbWhpbHJreDAwZTh5MmlvZHZhNm90anc2In0.YO3YGnq8Tl7NGO_XHC6s4w";
+    const map = new mapboxgl.Map({
+      container: "map",
+      // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+      style: "mapbox://styles/mapbox/standard",
+      center: [-0.15591514, 51.51830379],
+      zoom: 15.5,
+      bearing: 27,
+      pitch: 45,
+    });
+
+    const chapters = {
+      "New-York-City": {
+        center: [-73.985664, 40.748514], // NYC
+        zoom: 12,
+        pitch: 30,
+        bearing: 0
+      },
+      "Berlin": {
+        center: [13.41053, 52.52437], // Berlin
+        zoom: 12,
+        pitch: 30,
+        bearing: 0
+      },
+      "Shanghai": {
+        center: [121.4737, 31.2304], // Shanghai
+        zoom: 12,
+        pitch: 30,
+        bearing: 0
+      }
+    };
+
+
+    function setActiveChapter(chapterName) {
+      if (chapterName === activeChapterName) return;
+
+      map.flyTo(chapters[chapterName]);
+
+      document.getElementById(chapterName).classList.add("active");
+      document.getElementById(activeChapterName).classList.remove("active");
+
+      activeChapterName = chapterName;
+    }
+
+    function isElementOnScreen(id) {
+      const element = document.getElementById(id);
+      const bounds = element.getBoundingClientRect();
+      return bounds.top < window.innerHeight && bounds.bottom > 0;
+    }
+
+    // // On every scroll event, check which element is on screen
+    // window.onscroll = () => {
+    //   for (const chapterName in chapters) {
+    //     if (isElementOnScreen(chapterName)) {
+    //       setActiveChapter(chapterName);
+    //       break;
+    //     }
+    //   }
+    // };
+    document.querySelectorAll("section").forEach(sec => {
+      sec.addEventListener("mouseenter", () => {
+        const id = sec.id;
+        map.flyTo(chapters[id]);
+      });
+    });
+
+  </script>
+</body>
+
+</html>
