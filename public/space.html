@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>3D Space</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single:wght@100..900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="space.css">
+    
+  </head>
+  <body>
+    <header>Lowres Global CloudDrive</header>
+    <h1>1. Mouse Left to Orbit Drag</h1>
+    <h2>2. Mouse Right to Add Cube On Grid</h2>
+    <h3>3. Right Click on a cube to view details</h3>
+    <h4>4. Scroll to Zoom In/Out</h4>
+
+    <div class="cube-information"></div>
+
+    <a id="home">Home</a>
+
+    <dialog id="messageBox">
+      <label for="name">Name:</label>
+      <input type="text" id="name">
+
+      <label for="year">Year:</label>
+      <input type="number" id="year" value="2021" min="1900" max="2099">
+
+      <label for="message">Message:</label>
+      <input type="text" id="message">
+
+      <button id="submitBtn">Submit</button>
+      <button id="cancelBtn">Cancel</button>
+    </dialog>
+
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
