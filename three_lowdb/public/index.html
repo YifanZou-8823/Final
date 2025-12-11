@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Fly to a location based on scroll position</title>
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+
+  <!-- Mapbox CSS -->
+  <link href="https://api.mapbox.com/mapbox-gl-js/v3.17.0-beta.1/mapbox-gl.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single:wght@100..900&display=swap"
+    rel="stylesheet">
+  <!-- Your custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<header>Lowres Global CloudDrive</header>
+
+<body>
+  <div id="map"></div>
+
+  <div id="features">
+    <section id="New-York-City" onclick="navigate(1)">
+      <h3>370 Jay Street.</h3>
+      <p>...</p>
+    </section>
+
+    <section id="Berlin" onclick="navigate(2)">
+      <h3>Schönhauser Allee 36</h3>
+      <p>...</p>
+    </section>
+
+    <section id="Shanghai" onclick="navigate(3)">
+      <h3>No. 567 West Yangsi West Road</h3>
+      <p>...</p>
+    </section>
+
+    <section1>
+      <p> Click the addresses above to enter each campus' CloudDrive</address></p>
+    </section1>
+  </div>
+  <div></div>
+
+  <!-- Mapbox JS -->
+  <script src="https://api.mapbox.com/mapbox-gl-js/v3.17.0-beta.1/mapbox-gl.js"></script>
+  <script src="app.js"></script>
+
+</body>
+
+</html>

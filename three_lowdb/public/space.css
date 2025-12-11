@@ -1,0 +1,109 @@
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.flex-container {
+  display: flex; 
+  flex-direction: row; 
+}
+
+body {
+font-family: 'Courier New', Courier, monospace;
+}
+
+header {
+  font-family: 'Bitcount Prop Single';
+  position: absolute;
+  z-index: 10; /*Ensure it appears above the canvas */
+  top: 50px;
+  left: 50px;
+  font-size:55px; /* Increase font size */
+  color: white; /* Text color */
+  align-items: center;
+}
+
+h1 {
+  position: absolute;
+  z-index: 10; /*Ensure it appears above the canvas */
+  top: 130px;
+  left: 50px;
+  font-size: 20px; /* Increase font size */
+  color: white; /* Text color */
+}
+
+h2 {
+  position: absolute;
+  top: 170px; /*Ensure it appears above the canvas */
+  left: 50px;
+  z-index: 10; /*Ensure it appears above the canvas */
+  font-size: 20px; /* Increase font size */
+  color: white; /* Text color */
+}
+
+h3 {
+  position: absolute;
+  top: 210px; /*Ensure it appears above the canvas */
+  left: 50px;
+  z-index: 10; /*Ensure it appears above the canvas */
+  font-size: 20px; /* Increase font size */
+  color: white; /* Text color */
+}
+
+h4 {
+  position: absolute;
+  top: 250px; /*Ensure it appears above the canvas */
+  left: 50px;
+  z-index: 10; /*Ensure it appears above the canvas */
+  font-size: 20px; /* Increase font size */
+  color: white; /* Text color */
+}
+
+.cube-information {
+  position: absolute;
+  top: 340px;
+  right: 80px;
+  z-index: 10;
+  min-width: 200px;
+  color: white;
+  background-color: #51349E;
+  padding: 10px;
+}
+#home {
+  position: absolute;
+  top: 80px;
+  right: 80px;
+  z-index: 10;
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+input {
+  display: block;
+  margin-bottom: 10px;
+  padding: 8px;
+  font-size: 16px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+#messageBox {
+color: white;
+background-color: #51349E;
+}
+
+#submitBtn {
+font-family: 'Bitcount Prop Single';
+}
+
+#cancelBtn {
+font-family: 'Bitcount Prop Single';
+}
